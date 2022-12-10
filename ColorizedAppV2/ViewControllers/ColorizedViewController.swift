@@ -8,22 +8,64 @@
 import UIKit
 
 class ColorizedViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    // MARK: - IB Outlets
+    @IBOutlet var colorView: UIView! {
+        didSet {
+            colorView.layer.cornerRadius = 15
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet var redValueLabel: UILabel!
+    @IBOutlet var greenValueLabel: UILabel!
+    @IBOutlet var blueValueLabel: UILabel!
+    
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
+    
+    // MARK: - Lify Cycle Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupSliders()
     }
-    */
+    
+    override func viewWillLayoutSubviews() {
+        setupColorView()
+    }
+    
+    // MARK: - IB Actions
+    @IBAction func redSliderAction() {
+        redValueLabel.text = string(from: redSlider)
+    }
+    
+    @IBAction func greenSliderAction() {
+        greenValueLabel.text = string(from: greenSlider)
+    }
+    
+    @IBAction func blueSliderAction() {
+        blueValueLabel.text = string(from: blueSlider)
+    }
+}
 
+// MARK: - Private Methods
+extension ColorizedViewController {
+    private func setupSliders() {
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        blueSlider.minimumTrackTintColor = .blue
+    }
+    
+    private func setupColorView() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
 }
