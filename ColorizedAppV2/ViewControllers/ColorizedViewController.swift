@@ -57,34 +57,52 @@ class ColorizedViewController: UIViewController {
     
     // MARK: - IB Actions
     @IBAction func redSliderAction() {
-        redValueLabel.text = string(from: redSlider)
+        setValue(for: redValueLabel)
     }
     
     @IBAction func greenSliderAction() {
-        greenValueLabel.text = string(from: greenSlider)
+        setValue(for: greenValueLabel)
     }
     
     @IBAction func blueSliderAction() {
-        blueValueLabel.text = string(from: blueSlider)
+        setValue(for: blueValueLabel)
     }
 }
 
 // MARK: - Private Methods
 extension ColorizedViewController {
     private func setupSliders() {
+        setMinimumTrackTintColor()
+        setSliderValue()
+        setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
+    }
+    
+    private func setMinimumTrackTintColor() {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
-        
+    }
+    
+    private func setSliderValue() {
         redSlider.value = Float(red)
         greenSlider.value = Float(green)
         blueSlider.value = Float(blue)
-        
-        redValueLabel.text = string(from: redSlider)
-        greenValueLabel.text = string(from: greenSlider)
-        blueValueLabel.text = string(from: blueSlider)
     }
     
+    private func setValue(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redValueLabel:
+                label.text = string(from: redSlider)
+            case greenValueLabel:
+                label.text = string(from: greenSlider)
+            default:
+                label.text = string(from: blueSlider)
+            }
+        }
+    }
+    
+    /// Начальная настройка colorView в соответствии с полученным цветом backgroundColor из MainViewController
     private func setupColorView() {
         colorView.backgroundColor = UIColor(
             red: red,
@@ -94,6 +112,7 @@ extension ColorizedViewController {
         )
     }
     
+    /// Настройка colorView через взаимодействие со слайдерами
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),

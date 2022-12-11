@@ -17,13 +17,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let color = view.backgroundColor
-//        guard let color = color else { return }
-//        let ciColor = CIColor(color: color)
-//        let red = ciColor.red
-//        let green = ciColor.green
-//        let blue = ciColor.blue
-//        let alpha = ciColor.alpha
     }
     
     // MARK: - Navigation
