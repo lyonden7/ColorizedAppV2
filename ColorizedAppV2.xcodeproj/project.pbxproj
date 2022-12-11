@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28425D2A294402350079D529 /* ColorizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28425D29294402350079D529 /* ColorizedViewController.swift */; };
+		28425D3129454AA90079D529 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28425D3029454AA90079D529 /* MainViewController.swift */; };
 		28B1EF17294400A300043C9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1EF16294400A300043C9E /* AppDelegate.swift */; };
 		28B1EF19294400A300043C9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1EF18294400A300043C9E /* SceneDelegate.swift */; };
 		28B1EF1E294400A300043C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B1EF1C294400A300043C9E /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		28425D29294402350079D529 /* ColorizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorizedViewController.swift; sourceTree = "<group>"; };
+		28425D3029454AA90079D529 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28B1EF13294400A300043C9E /* ColorizedAppV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorizedAppV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B1EF16294400A300043C9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28B1EF18294400A300043C9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				28425D29294402350079D529 /* ColorizedViewController.swift */,
+				28425D3029454AA90079D529 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				28B1EF17294400A300043C9E /* AppDelegate.swift in Sources */,
 				28B1EF19294400A300043C9E /* SceneDelegate.swift in Sources */,
 				28425D2A294402350079D529 /* ColorizedViewController.swift in Sources */,
+				28425D3129454AA90079D529 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
