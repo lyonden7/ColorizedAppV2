@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ColorizedViewControllerDelegate {
+    func setNewValues(for red: CGFloat, green: CGFloat, blue: CGFloat)
+}
+
 class MainViewController: UIViewController {
     
     
@@ -33,4 +37,16 @@ class MainViewController: UIViewController {
     // MARK: - IB Actions
     
 
+}
+
+// MARK: - ColorizedViewControllerDelegate
+extension ColorizedViewController: ColorizedViewControllerDelegate {
+    func setNewValues(for red: CGFloat, green: CGFloat, blue: CGFloat) {
+        view.backgroundColor = UIColor(
+            red: red,
+            green: green,
+            blue: blue,
+            alpha: 1
+        )
+    }
 }

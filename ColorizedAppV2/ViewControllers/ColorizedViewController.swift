@@ -24,6 +24,10 @@ class ColorizedViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    @IBOutlet var redTextfield: UITextField!
+    @IBOutlet var greenTextfield: UITextField!
+    @IBOutlet var blueTextfield: UITextField!
+    
     // MARK: - Public Properties
     var color: UIColor!
     
@@ -66,6 +70,10 @@ class ColorizedViewController: UIViewController {
     
     @IBAction func blueSliderAction() {
         setValue(for: blueValueLabel)
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+        
     }
 }
 
