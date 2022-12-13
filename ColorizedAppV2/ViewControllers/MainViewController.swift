@@ -8,20 +8,10 @@
 import UIKit
 
 protocol ColorizedViewControllerDelegate {
-    func setNewValues(for red: CGFloat, green: CGFloat, blue: CGFloat)
+    func setNewValues(red: CGFloat, green: CGFloat, blue: CGFloat)
 }
 
 class MainViewController: UIViewController {
-    
-    
-    // MARK: - Public Properties
-    
-    
-    // MARK: - Life Cycle Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,17 +21,14 @@ class MainViewController: UIViewController {
         guard let color = color else { return }
         colorizedVC.color = color
         
+        colorizedVC.delegate = self
     }
     
-    
-    // MARK: - IB Actions
-    
-
 }
 
 // MARK: - ColorizedViewControllerDelegate
-extension ColorizedViewController: ColorizedViewControllerDelegate {
-    func setNewValues(for red: CGFloat, green: CGFloat, blue: CGFloat) {
+extension MainViewController: ColorizedViewControllerDelegate {
+    func setNewValues(red: CGFloat, green: CGFloat, blue: CGFloat) {
         view.backgroundColor = UIColor(
             red: red,
             green: green,

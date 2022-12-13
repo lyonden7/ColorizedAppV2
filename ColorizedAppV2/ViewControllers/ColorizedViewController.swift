@@ -30,6 +30,7 @@ class ColorizedViewController: UIViewController {
     
     // MARK: - Public Properties
     var color: UIColor!
+    var delegate: ColorizedViewControllerDelegate!
     
     // MARK: - Private Properties
     private var ciColor: CIColor {
@@ -73,7 +74,13 @@ class ColorizedViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
+        delegate.setNewValues(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value)
+        )
         
+        dismiss(animated: true)
     }
 }
 
