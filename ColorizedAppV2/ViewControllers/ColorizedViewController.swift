@@ -49,7 +49,7 @@ class ColorizedViewController: UIViewController {
         ciColor.alpha
     }
     
-    // MARK: - Lify Cycle Methods
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
