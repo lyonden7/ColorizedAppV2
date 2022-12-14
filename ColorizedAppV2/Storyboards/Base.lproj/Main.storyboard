@@ -46,10 +46,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uo1-5f-fyr">
-                                <rect key="frame" x="16" y="224" width="288" height="94"/>
+                                <rect key="frame" x="16" y="224" width="288" height="118"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BZO-oR-fq4">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="94"/>
+                                        <rect key="frame" x="0.0" y="12" width="50" height="94"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-Ri-zpL">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="18"/>
@@ -75,7 +75,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1JM-Pe-9f6">
-                                        <rect key="frame" x="58" y="0.0" width="40" height="94"/>
+                                        <rect key="frame" x="58" y="12" width="40" height="94"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-8V-Qix">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="18"/>
@@ -101,10 +101,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9bz-cQ-pG2">
-                                        <rect key="frame" x="106" y="0.0" width="134" height="94"/>
+                                        <rect key="frame" x="106" y="12" width="130" height="94"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.12" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-Uv-gaV">
-                                                <rect key="frame" x="-2" y="0.0" width="138" height="19"/>
+                                                <rect key="frame" x="-2" y="0.0" width="134" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="jHE-eL-ryN"/>
                                                 </constraints>
@@ -113,7 +113,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.34000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xtk-Wc-dy4">
-                                                <rect key="frame" x="-2" y="38" width="138" height="19"/>
+                                                <rect key="frame" x="-2" y="38" width="134" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="vTA-D1-PxH"/>
                                                 </constraints>
@@ -122,7 +122,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.56000000000000005" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fkA-UB-Y1r">
-                                                <rect key="frame" x="-2" y="76" width="138" height="19"/>
+                                                <rect key="frame" x="-2" y="76" width="134" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="iFh-QV-glE"/>
                                                 </constraints>
@@ -133,35 +133,26 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uth-Sg-ges">
-                                        <rect key="frame" x="248" y="0.0" width="40" height="94"/>
+                                        <rect key="frame" x="244" y="0.0" width="44" height="118"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-hs-H32">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="26"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="26" id="wV9-iF-JL0"/>
-                                                </constraints>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-hs-H32">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bi-a4-fPg">
-                                                <rect key="frame" x="0.0" y="34" width="40" height="26"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="26" id="l9a-z2-fat"/>
-                                                </constraints>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bi-a4-fPg">
+                                                <rect key="frame" x="0.0" y="42" width="44" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qEl-bF-i7s">
-                                                <rect key="frame" x="0.0" y="68" width="40" height="26"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="26" id="0eu-oZ-6iD"/>
-                                                </constraints>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qEl-bF-i7s">
+                                                <rect key="frame" x="0.0" y="84" width="44" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="jZq-HS-6FT"/>
+                                            <constraint firstAttribute="width" constant="44" id="jZq-HS-6FT"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -190,14 +181,14 @@
                     </view>
                     <connections>
                         <outlet property="blueSlider" destination="fkA-UB-Y1r" id="X1h-wZ-dqX"/>
-                        <outlet property="blueTextfield" destination="qEl-bF-i7s" id="8ik-fh-NcH"/>
+                        <outlet property="blueTextField" destination="qEl-bF-i7s" id="8ik-fh-NcH"/>
                         <outlet property="blueValueLabel" destination="vch-dI-xVr" id="xtr-mP-bXs"/>
                         <outlet property="colorView" destination="Yf6-H4-lTU" id="grf-38-qwt"/>
                         <outlet property="greenSlider" destination="xtk-Wc-dy4" id="ts7-ty-8IA"/>
-                        <outlet property="greenTextfield" destination="4bi-a4-fPg" id="mrL-qb-KGS"/>
+                        <outlet property="greenTextField" destination="4bi-a4-fPg" id="mrL-qb-KGS"/>
                         <outlet property="greenValueLabel" destination="Pnk-uD-ULx" id="bvU-uC-0IX"/>
                         <outlet property="redSlider" destination="Nl7-Uv-gaV" id="Pux-1Z-TEx"/>
-                        <outlet property="redTextfield" destination="Gca-hs-H32" id="tmx-po-qMQ"/>
+                        <outlet property="redTextField" destination="Gca-hs-H32" id="tmx-po-qMQ"/>
                         <outlet property="redValueLabel" destination="oMU-8V-Qix" id="EXu-4D-SOA"/>
                     </connections>
                 </viewController>
