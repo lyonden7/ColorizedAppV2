@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ColorizedViewControllerDelegate {
-    func setNewValues(red: CGFloat, green: CGFloat, blue: CGFloat)
+    func setNewValues(color: UIColor)
 }
 
 class MainViewController: UIViewController {
@@ -16,24 +16,14 @@ class MainViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let colorizedVC = segue.destination as? ColorizedViewController else { return }
-        
-        let color = view.backgroundColor
-        guard let color = color else { return }
-        colorizedVC.color = color
-        
+        colorizedVC.color = view.backgroundColor
         colorizedVC.delegate = self
     }
-    
 }
 
 // MARK: - ColorizedViewControllerDelegate
 extension MainViewController: ColorizedViewControllerDelegate {
-    func setNewValues(red: CGFloat, green: CGFloat, blue: CGFloat) {
-        view.backgroundColor = UIColor(
-            red: red,
-            green: green,
-            blue: blue,
-            alpha: 1
-        )
+    func setNewValues(color: UIColor) {
+        view.backgroundColor = color
     }
 }

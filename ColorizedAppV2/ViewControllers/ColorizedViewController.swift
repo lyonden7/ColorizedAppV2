@@ -32,23 +32,6 @@ class ColorizedViewController: UIViewController {
     var color: UIColor!
     var delegate: ColorizedViewControllerDelegate!
     
-    // MARK: - Private Properties
-    private var ciColor: CIColor {
-        CIColor(color: color)
-    }
-    private var red: CGFloat {
-        ciColor.red
-    }
-    private var green: CGFloat {
-        ciColor.green
-    }
-    private var blue: CGFloat {
-        ciColor.blue
-    }
-    private var alpha: CGFloat {
-        ciColor.alpha
-    }
-    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,12 +69,7 @@ class ColorizedViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
-        delegate.setNewValues(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value)
-        )
-        
+        delegate.setNewValues(color: colorView.backgroundColor ?? .white)
         dismiss(animated: true)
     }
 }
@@ -100,7 +78,6 @@ class ColorizedViewController: UIViewController {
 extension ColorizedViewController {
     ///Метод, собирающий все методы по первоначальной настройке ColorView, UISlider, UITextfield, UILabel
     private func setupViews() {
-        setupColorView()
         setMinimumTrackTintColor()
         setSliderValue()
         setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
@@ -114,9 +91,10 @@ extension ColorizedViewController {
     }
     
     private func setSliderValue() {
-        redSlider.value = Float(red)
-        greenSlider.value = Float(green)
-        blueSlider.value = Float(blue)
+        let ciColor = CIColor(color: color ?? .white)
+        redSlider.value = Float(ciColor.red)
+        greenSlider.value = Float(ciColor.green)
+        blueSlider.value = Float(ciColor.blue)
     }
     
     private func setValue(for labels: UILabel...) {
@@ -143,16 +121,6 @@ extension ColorizedViewController {
                 textField.text = string(from: blueSlider)
             }
         }
-    }
-    
-    /// Начальная настройка colorView в соответствии с полученным цветом backgroundColor из MainViewController
-    private func setupColorView() {
-        colorView.backgroundColor = UIColor(
-            red: red,
-            green: green,
-            blue: blue,
-            alpha: alpha
-        )
     }
     
     /// Настройка colorView через взаимодействие со слайдерами
@@ -205,15 +173,15 @@ extension ColorizedViewController: UITextFieldDelegate {
         
         switch textField {
         case redTextField:
-            redSlider.value = floatValue
+            redSlider.setValue(floatValue, animated: true)
             setValue(for: redValueLabel)
             setValue(for: redTextField)
         case greenTextField:
-            greenSlider.value = floatValue
+            greenSlider.setValue(floatValue, animated: true)
             setValue(for: greenValueLabel)
             setValue(for: greenTextField)
         default:
-            blueSlider.value = floatValue
+            blueSlider.setValue(floatValue, animated: true)
             setValue(for: blueValueLabel)
             setValue(for: blueTextField)
         }
